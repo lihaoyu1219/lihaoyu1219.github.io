@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .3s ease-in;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font: 16px/1.4 'Microsoft yahei', Arial;
+    background-color: #f7f9fe;
+
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.mw {
+    max-width: 120rem;
+    margin: 6rem auto;
+    padding: 0 5rem;
+}
+
+.auto_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.load_bar {
+    position: relative;
+    width: 9rem;
+    height: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: linear-gradient(to right top, #fdb084, #ff9870, #ff7e62, #ff5f59, #ff3656);
+}
+
+.load_bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: white;
+    animation: load_bar 2s linear infinite;
+}
+
+@keyframes load_bar {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100%;
+    }
+}
